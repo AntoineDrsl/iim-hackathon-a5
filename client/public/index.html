@@ -11,18 +11,23 @@
 <meta name="title" content="Devinci Alumni | Votre communauté en ligne" >
 <meta property="og:site_name" content="Devinci Alumni" >
         <style>
+          @import "https://fonts.googleapis.com/css?family=Roboto:400,500";
             @font-face {
                 font-style: normal;
                 font-display: swap;
                 font-family: 'FontAF';
-                src: url('https://www.devincialumni.com/templates/common/fonts/af_font_v2.woff') format('woff');
+                src: url('assets/fonts/af_font_v2.woff') format('woff');
                 font-weight: normal;
                 font-style: normal;
             }
-            .af-font-icon-instagram:before {
-    content: "\e99c";
-}
+            .social-icon {
+              width: 25%;
+            }
+            .search-icon {
+              width: 55%;
+            }
         </style>
+        
 <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin >
 <link href="https://fonts.googleapis.com" rel="preconnect" >
 <link href="https://www.devincialumni.com/medias/image/281105411647053dd11e66.ico" rel="icon" type="image/vnd.microsoft.icon" sizes="16x16 32x32 48x48" >
@@ -30,7 +35,7 @@
 <link href="https://www.devincialumni.com/templates/onboarding-devincialumni.com/css/vue.css?version=1689742916" media="screen" rel="stylesheet" type="text/css" >
 
 <noscript> <link href="https://www.devincialumni.com/templates/common/css/print.css?version=1689742916" media="print" rel="stylesheet" ></noscript>
-<link href="https://www.devincialumni.com/assets/css/main.build.css?version=1689742916" media="screen" rel="stylesheet" type="text/css" >
+<link href="/assets/css/main.css" media="screen" rel="stylesheet" type="text/css" >
 <link href="https://www.devincialumni.com/site/css/show" media="screen, print" rel="stylesheet" type="text/css" >
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" media="screen, print" rel="stylesheet" type="text/css" >
 <meta name="google-site-verification" content="6txytyzDDZHqWS5Cx4yQKmxtArCGDmAcZJycfdv1CuU" />
@@ -495,7 +500,7 @@
                                   postlink="addContent"
                                   width="250"
                                   class="btn btn-primary btn-round bold">
-                            <i class="af-font-icon-plus-circle-light bigger"></i> Créez un contenu
+                            <img src="/assets/img/plus.svg" class="af-font-icon-plus-circle-light bigger"> Créez un contenu
                         </lightbox>
                                                                                     <div class="closed-unlogged-language-switch space-top-medium space-bottom-medium space-right-medium relative userbar-menu-item"
                              @mouseenter="showTooltip"
@@ -563,7 +568,7 @@
                         <i class="mdi mdi-chevron-right huge"></i>
                     </button>
                                             <div class="af-userbar-search space-normal" @click="showSearch">
-                            <i class="af-font-icon-search bigger cl-graydark"></i>
+                            <img src="/assets/img/search.svg" class="search-icon af-font-icon-search bigger cl-graydark"></i>
                         </div>
                                         <div class="af-userbar-profile">
                         <div class="space-normal userbar-menu-item"
@@ -934,7 +939,7 @@
                                   width="250"
                                   class="af-userbar-menubar-elements space-normal">
                             <span>
-                                <i class="af-font-icon-plus-circle-light cl-primary bigger"></i>
+                              <img src="/assets/img/plus.svg" class="search-icon af-font-icon-plus-circle-light cl-primary bigger">
                             </span>
                         </lightbox>
                                                                 <div class="closed-unlogged-language-switch space-top-medium space-bottom-medium relative userbar-menu-item borderbox-top pull-up-small"
@@ -1760,7 +1765,16 @@
                             </div>
                             <div class="col-xs-12 span4 no-margin customizable-bloc-3">
                                 <p class="pull-down-small cl-primary uppercase medium title bold">Suivez-nous sur</p>
-                                <div class="richedit_wrap"><ul class="pull-down inline"><li style="text-align: center;"><a class="no-textdecoration" href="https://www.facebook.com/devincialumni" rel="noopener noreferrer" target="_blank"><i class="cl-primary mega space-right-medium af-font-icon-facebook"></i></a> <a class="no-textdecoration" href="https://www.linkedin.com/company/devinci-alumni/" rel="noopener noreferrer" target="_blank"><i class="cl-primary mega space-right-medium af-font-icon-linkedin"></i></a></li><li style="text-align: justify;"><a class="no-textdecoration" href="https://www.instagram.com/devincialumni/" rel="noopener noreferrer" target="_blank"><i class="cl-primary mega space-right-medium af-font-icon-instagram"></i></a></li></ul></div>
+                                <div class="richedit_wrap"><ul class="pull-down inline"><li style="text-align: center;">
+                                  <a class="no-textdecoration" href="https://www.facebook.com/devincialumni" rel="noopener noreferrer" target="_blank">
+                                    <img src="/assets/img/fb.png" class="social-icon cl-primary mega space-right-medium af-font-icon-facebook">
+                                  </a> 
+                                  <a class="no-textdecoration" href="https://www.linkedin.com/company/devinci-alumni/" rel="noopener noreferrer" target="_blank">
+                                    <img src="/assets/img/linkedin.svg" class="social-icon cl-primary mega space-right-medium af-font-icon-linkedin">
+                                  </a>
+                                  <a class="no-textdecoration" href="https://www.instagram.com/devincialumni/" rel="noopener noreferrer" target="_blank">
+                                    <img src="/assets/img/insta.png" class="social-icon mega space-right-medium af-font-icon-instagram">
+                                  </a></div>
                             </div>
                                             </div>
                 </div>
@@ -1830,127 +1844,8 @@
 
 <a href="javascript:void(0);" onclick="return false;" id="generate_company_tooltip" ></a>
 
-<!-- Templates for the upload, don't delete them -->
-<script id="template-upload" type="text/x-tmpl">
-        {% for (var i=0, file; file=o.files[i]; i++) { %}
-        <tr class="template-upload fade">
-            <td class="preview preview-small space-medium">
-                {% if ((file.error) || ((file.type) && (file.type.substring(0,5) != "image"))) { %}
-                <i class="af-font-icon-picture-light"></i>
-                {% } else { %}
-                <span class="fade"></span>
-                {% } %}
-            </td>
-            <!--        <td class="name space-medium"><span>{%=file.name%}</span></td>-->
-            <td class="size space-medium"><span>{%=o.formatFileSize(file.size)%}</span></td>
-            {% if (file.error) { %}
-            <td class="error space-medium" colspan="2"><span class="label label-important">Erreur</span> {%=file.error%}<br />{%=file.name%}</td>
-            {% } else if (o.files.valid && !i) { %}
-            <td class="progress-zone space-medium">
-                <div class="progress progress-success progress-striped active" role="progressbar" aria-valuemin="0"
-                     aria-valuemax="100" aria-valuenow="0">
-                    <div class="bar" style="width:0%;"></div>
-                </div>
-            </td>
-            <td class="hide start space-medium">{% if (!o.options.autoUpload) { %}
-                <button class="btn btn-primary">
-                    <i class="af-font-icon-upload-light"></i>
-                    Télécharger                </button>
-                {% } %}
-            </td>
-            {% } else { %}
-            <td colspan="2"></td>
-            {% } %}
-            <td class="cancel space-medium">{% if (!i) { %}
-                <button class="btn btn-warning" data-role="upload-cancel">
-                    <i class="af-font-icon-forbidden-alt-light"></i>
-                    Annuler                </button>
-                {% } %}
-            </td>
-        </tr>
-        {% } %}
-    </script>
-<script id="template-download" type="text/x-tmpl">
-        {% for (var i=0, file; file=o.files[i]; i++) { %}
-        <tr class="template-download fade">
-            {%=file%}
-            {% if (file.error) { %}
-            <td class="preview preview-small space-medium"> <i class="af-font-icon-picture-light"></i></td>
-            <!--        <td class="name"><span>{%=file.name%}</span></td>-->
-            <td class="size space-medium"><span>{%=o.formatFileSize(file.size)%}</span></td>
-            <td class="error status space-medium" colspan="2"><span class="label label-important">Erreur</span> {%=file.error%}<br />{%=file.name%}</td>
-            {% } else { %}
-            <td class="preview preview-small space-medium">{% if (file.thumbnail_url) { %}
-                <a href="{%=file.url%}" title="{%=file.name%}"><img
-                        src="{%=file.thumbnail_url%}"></a>
-                {% } else { %}
-                <i class="af-font-icon-picture-light"></i>
-                {% } %}
-
-            </td>
-            <!--        <td class="name space-medium">-->
-            <!--            <a href="{%=file.url%}" title="{%=file.name%}" data-gallery="{%=file.thumbnail_url&&'gallery'%}"-->
-            <!--               download="{%=file.name%}">{%=file.name%}</a>-->
-            <!--        </td>-->
-            <td class="size space-medium"><span>{%=o.formatFileSize(file.size)%}</span></td>
-            <td class="success status space-medium" colspan="2"><span class="label label-success">Succès</span> Fichier téléchargé</td>
-            <td colspan="2"></td>
-            {% } %}
-        </tr>
-        {% } %}
 
 
-
-    </script>
-<script id="crop-template-upload" type="text/x-tmpl">
-        {% for (var i=0, file; file=o.files[i]; i++) { %}
-        <tr class="template-upload fade crop">
-            <td>
-                <input type="hidden" id="crop-coordinates" name="crop-coordinates" data-role="crop-coordinates" />
-                <div class="row-fluid preview">
-                    {% if (!((file.error) || ((file.type) && (file.type.substring(0,5) != "image")))) { %}
-                    <span class="span12 fade textcenter" data-role="crop-zone"></span>
-                    {% } %}
-                </div>
-                <div class="row-fluid pull-up">
-                    <div class="span1 size space-medium">
-                        <span>{%=o.formatFileSize(file.size)%}</span>
-                    </div>
-                    {% if (file.error) { %}
-                    <div class="span9 alert alert-error space-medium">
-                        <span class="label label-important">
-                            Erreur                        </span>
-                        {%=file.error%}
-                        <br />
-                        {%=file.name%}
-                    </div>
-                    {% } else if (o.files.valid && !i) { %}
-                    <div class="span7 progress-zone space-medium">
-                        <div class="progress progress-success progress-striped active" role="progressbar" aria-valuemin="0"
-                             aria-valuemax="100" aria-valuenow="0">
-                            <div class="bar" style="width:0%;"></div>
-                        </div>
-                    </div>
-                    <div class="span2 hide start space-medium">{% if (!o.options.autoUpload) { %}
-                        <button class="btn btn-primary">
-                            <i class="af-font-icon-upload-light"></i>
-                            Télécharger                        </button>
-                        {% } %}
-                    </div>
-                    {% } else { %}
-                    <div class="span9 space-medium"></div>
-                    {% } %}
-                    <div class="span2 cancel space-medium">{% if (!i) { %}
-                        <button class="btn btn-warning" data-role="upload-cancel">
-                            <i class="af-font-icon-forbidden-alt-light"></i>
-                            Annuler                        </button>
-                        {% } %}
-                    </div>
-                </div>
-            </td>
-        </tr>
-        {% } %}
-    </script>
 
 
     
