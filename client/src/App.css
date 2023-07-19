@@ -8,11 +8,11 @@
 .user-list-container{
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 .card-container{
-  flex: 1;
-  min-width: 25%;
-  margin: 2%;
+  width: 30%;
+  margin: 10px 0;
   background-color: #FEFEFE;
   box-shadow: -10px -5px 5px #D2D2D2;
   padding: 2%;
@@ -67,4 +67,21 @@
   min-height: 30px;
   font-size: 18px;
   font-weight: 500;
+}
+.input-container{
+  width: fit-content;
+  border-bottom: 1px solid grey;
+  display: flex;
+  justify-content: flex-start;
+  vertical-align: middle;
+  align-items: center;
+}
+.search-icon{
+  margin: 5px 5px 10px;
+}
+.search-input-react{
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 0 10px!important;
+  background-color: #E5E5E5 !important;
 }
