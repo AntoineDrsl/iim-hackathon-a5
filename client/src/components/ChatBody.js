@@ -1,29 +1,19 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
-const ChatBody = ({ user, messages, typingStatus, lastMessageRef }) => {
-
-  const navigate = useNavigate();
-
-  const handleLeaveChat = () => {
-    localStorage.removeItem('userName');
-    navigate('/');
-    window.location.reload();
-  };
-
+const ChatBody = ({ selectedUser, messages, typingStatus, lastMessageRef }) => {
   return (
     <>
       <header style={{height: "50px", paddingLeft: "20px", borderBottom: "solid lightgrey 1px"}}>
         {
-          user &&
+          selectedUser &&
           <div style={{display: "flex", justifyContent: "start", alignItems: "center", marginBottom: "10px", marginTop: "10px"}}>
-            <img src={require(`../assets/${user.image}`)} alt={user.nom} style={{borderRadius: "50px", marginRight: "15px", height: "40px", width: "40px"}} />
-            <h1>{ user.nom }</h1>
+            <img src={require(`../assets/${selectedUser.image}`)} alt={selectedUser.nom} style={{borderRadius: "50px", marginRight: "15px", height: "40px", width: "40px"}} />
+            <h1>{ selectedUser.nom }</h1>
           </div>
         }
       </header>
 
-      <div className="message__container">
+      <div id="messageContainer" className="message__container">
         {messages.map((message) =>
           message.name === localStorage.getItem('userName') ? (
             <div className="message__chats" key={message.id}>

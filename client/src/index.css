@@ -89,6 +89,7 @@
   background-color: #fff;
   padding: 20px;
   overflow-y: scroll;
+  position: relative;
 }
 
 .message__container > * {
@@ -146,8 +147,10 @@
   color: grey;
 }
 .message__status {
-  position: fixed;
+  position: absolute;
   bottom: 50px;
   font-size: 13px;
   font-style: italic;
+  bottom: 0;
+  left: 20px;
 }

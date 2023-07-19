@@ -29,22 +29,33 @@ app.use(bodyParser.urlencoded({extended: true}));
 let users = data.students
 
 socketIO.on('connection', (socket) => {
-    console.log(`⚡: ${socket.id} user just connected!`);
-	socketIO.emit('newUserResponse', users);
+  console.log(`⚡: ${socket.id} user just connected!`);
 
-	//Listens and logs the message to the console
+  // Get new user (in order)
+  const newUser = users.find(u => !u.connected);
+  newUser.connected = 1
+  newUser.socketId = socket.id
+	socketIO.to(socket.id).emit('newUserResponse', {
+    user: newUser,
+    users: users.filter(u => u.id !== newUser.id),
+  });
+
+	// Listens and logs the message to the console
 	socket.on('message', (data) => {
 		socketIO.emit('messageResponse', data);
 	});
 
+  // Typing
 	socket.on('typing', (data) => socket.broadcast.emit('typingResponse', data));
 
-    socket.on('disconnect', () => {
-      console.log('🔥: A user disconnected');
-	  users = users.filter((user) => user.socketID !== socket.id);
-	  socketIO.emit('newUserResponse', users);
-	  socket.disconnect();
-    });
+  // Disconnect
+  socket.on('disconnect', () => {
+    console.log('🔥: A user disconnected');
+    const user = users.find(u => u.socketId === socket.id);
+    user.connected = 0;
+    user.socketId = null;
+    socket.disconnect();
+  });
 });
 
 // Test route

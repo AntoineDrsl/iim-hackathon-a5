@@ -8,9 +8,6 @@ import './App.css';
 const socket = socketIO.connect('http://localhost:4000');
 
 function App() {
-  const userName = 'Antoine';
-  localStorage.setItem('userName', userName);
-
   return (
     <BrowserRouter>
       <div>

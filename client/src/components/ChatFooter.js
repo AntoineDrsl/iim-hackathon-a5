@@ -4,7 +4,7 @@ const ChatFooter = ({ socket }) => {
   const [message, setMessage] = useState('');
 
   const handleTyping = () =>
-    socket.emit('typing', `${localStorage.getItem('userName')} is typing`);
+    socket.emit('typing', `${localStorage.getItem('userName')} is typing...`);
 
   const handleSendMessage = (e) => {
     e.preventDefault();

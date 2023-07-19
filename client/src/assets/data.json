@@ -2,7 +2,7 @@
 	"students": [
 	  {
 		"nom": "Antoine Durussel",
-		"identifiant": "AD001",
+		"id": "AD001",
 		"ecole": "IIM",
 		"email": "antoine.durussel@example.com",
 		"promotion": "2021",
@@ -12,7 +12,7 @@
 	  },
 	  {
 		"nom": "Allan Duche",
-		"identifiant": "AD002",
+		"id": "AD002",
 		"ecole": "ESILV",
 		"email": "allan.duche@example.com",
 		"promotion": "2019",
@@ -22,7 +22,7 @@
 	  },
 	  {
 		"nom": "Emma Martin",
-		"identifiant": "EM001",
+		"id": "EM001",
 		"ecole": "EMLV",
 		"email": "emma.martin@example.com",
 		"promotion": "2020",
@@ -32,7 +32,7 @@
 	  },
 	  {
 		"nom": "Louis Dupont",
-		"identifiant": "LD001",
+		"id": "LD001",
 		"ecole": "IIM",
 		"email": "louis.dupont@example.com",
 		"promotion": "2022",
@@ -42,7 +42,7 @@
 	  },
 	  {
 		"nom": "Sophie Lecomte",
-		"identifiant": "SL001",
+		"id": "SL001",
 		"ecole": "ESILV",
 		"email": "sophie.lecomte@example.com",
 		"promotion": "2018",
@@ -52,7 +52,7 @@
 	  },
 	  {
 		"nom": "Pierre Dubois",
-		"identifiant": "PD001",
+		"id": "PD001",
 		"ecole": "EMLV",
 		"email": "pierre.dubois@example.com",
 		"promotion": "2019",
@@ -62,7 +62,7 @@
 	  },
 	  {
 		"nom": "Julie Moreau",
-		"identifiant": "JM001",
+		"id": "JM001",
 		"ecole": "IIM",
 		"email": "julie.moreau@example.com",
 		"promotion": "2023",
@@ -72,7 +72,7 @@
 	  },
 	  {
 		"nom": "Elodie Simon",
-		"identifiant": "ES001",
+		"id": "ES001",
 		"ecole": "EMLV",
 		"email": "elodie.simon@example.com",
 		"promotion": "2020",
@@ -82,7 +82,7 @@
 	  },
 	  {
 		"nom": "Alexandre Martin",
-		"identifiant": "AM001",
+		"id": "AM001",
 		"ecole": "IIM",
 		"email": "alexandre.martin@example.com",
 		"promotion": "2023",
@@ -92,7 +92,7 @@
 	  },
 	  {
 		"nom": "Camille Dupuis",
-		"identifiant": "CD001",
+		"id": "CD001",
 		"ecole": "ESILV",
 		"email": "camille.dupuis@example.com",
 		"promotion": "2021",
@@ -102,7 +102,7 @@
 	  },
 	  {
 		"nom": "Nicolas Lambert",
-		"identifiant": "NL001",
+		"id": "NL001",
 		"ecole": "EMLV",
 		"email": "nicolas.lambert@example.com",
 		"promotion": "2019",
@@ -112,7 +112,7 @@
 	  },
 	  {
 		"nom": "Laura Dubois",
-		"identifiant": "LD002",
+		"id": "LD002",
 		"ecole": "IIM",
 		"email": "laura.dubois@example.com",
 		"promotion": "2022",
@@ -122,7 +122,7 @@
 	  },
 	  {
 		"nom": "Hugo Moreau",
-		"identifiant": "HM001",
+		"id": "HM001",
 		"ecole": "ESILV",
 		"email": "hugo.moreau@example.com",
 		"promotion": "2018",
@@ -132,7 +132,7 @@
 	  },
 	  {
 		"nom": "Mathilde Dupont",
-		"identifiant": "MD001",
+		"id": "MD001",
 		"ecole": "EMLV",
 		"email": "mathilde.dupont@example.com",
 		"promotion": "2020",
@@ -142,7 +142,7 @@
 	  },
 	  {
 		"nom": "Émilie Lefevre",
-		"identifiant": "EL001",
+		"id": "EL001",
 		"ecole": "IIM",
 		"email": "emilie.lefevre@example.com",
 		"promotion": "2023",
@@ -152,7 +152,7 @@
 	  },
 	  {
 		"nom": "Lucas Simon",
-		"identifiant": "LS001",
+		"id": "LS001",
 		"ecole": "ESILV",
 		"email": "lucas.simon@example.com",
 		"promotion": "2021",
@@ -162,7 +162,7 @@
 	  },
 	  {
 		"nom": "Emma Lambert",
-		"identifiant": "EL002",
+		"id": "EL002",
 		"ecole": "EMLV",
 		"email": "emma.lambert@example.com",
 		"promotion": "2019",
@@ -172,7 +172,7 @@
 	  },
 	  {
 		"nom": "Hugo Martin",
-		"identifiant": "HM002",
+		"id": "HM002",
 		"ecole": "IIM",
 		"email": "hugo.martin@example.com",
 		"promotion": "2022",
@@ -182,7 +182,7 @@
 	  },
 	  {
 		"nom": "Manon Dupuis",
-		"identifiant": "MD002",
+		"id": "MD002",
 		"ecole": "ESILV",
 		"email": "manon.dupuis@example.com",
 		"promotion": "2020",
@@ -192,7 +192,7 @@
 	  },
 	  {
 		"nom": "Lucie Moreau",
-		"identifiant": "LM001",
+		"id": "LM001",
 		"ecole": "EMLV",
 		"email": "lucie.moreau@example.com",
 		"promotion": "2021",

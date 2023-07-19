@@ -1,4 +1,4 @@
-const ChatBar = ({ users, selectedUser, handleSetUser }) => {
+const ChatBar = ({ users, selectedUser, handleSetSelectedUser }) => {
   return (
     <div style={{width: "100%", height: "100%", paddingLeft: "20px", borderRight: "1px solid lightgrey"}}>      
       <div style={{display: "flex", justifyContent: "space-between", alignItems: "center", height: "75px"}}>
@@ -9,9 +9,9 @@ const ChatBar = ({ users, selectedUser, handleSetUser }) => {
         <div style={{height: "450px", overflowY: "scroll"}}>
           {users.map((user) => (
             <div
-              style={{width: "100%", height: "50px", display: "flex", justifyContent: "start", alignItems: "center", cursor: "pointer", paddingLeft: "10px", backgroundColor: `${user.identifiant === selectedUser.identifiant ? 'lightgrey': ''}`}}
-              key={user.identifiant}
-              onClick={() => handleSetUser(user)}
+              style={{width: "100%", height: "50px", display: "flex", justifyContent: "start", alignItems: "center", cursor: "pointer", paddingLeft: "10px", backgroundColor: `${user.id === selectedUser.id ? 'lightgrey': ''}`}}
+              key={user.id}
+              onClick={() => handleSetSelectedUser(user)}
             >
               <img src={require(`../assets/${user.image}`)} alt={user.nom} style={{borderRadius: "50px", marginRight: "15px", height: "40px", width: "40px"}} />
               <p>{user.nom}</p>
