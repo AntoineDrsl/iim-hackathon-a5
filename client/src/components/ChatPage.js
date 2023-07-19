@@ -10,10 +10,19 @@ const ChatPage = ({ socket }) => {
 	const [users, setUsers] = useState([]);
 	const [user, setUser] = useState({});
 	const [selectedUser, setSelectedUser] = useState(users[0])
+	const [botActivated, setBotActivated] = useState(false);
 
 	const handleSetSelectedUser = selectedUser => {
+		setBotActivated(false);
 		socket.emit('getHistory', selectedUser);
 		setSelectedUser(selectedUser);
+	}
+
+	const handleBotActivated = botActivated => {
+		if(botActivated) {
+			setSelectedUser(null)
+		}
+		setBotActivated(botActivated);
 	}
 
 	useEffect(() => {
@@ -83,6 +92,8 @@ const ChatPage = ({ socket }) => {
 				users={users} 
 				selectedUser={selectedUser}
 				handleSetSelectedUser={handleSetSelectedUser}
+				botActivated={botActivated}
+				handleBotActivated={handleBotActivated}
 			/>
 		</div>
 		<div  style={{width: "75%"}}>

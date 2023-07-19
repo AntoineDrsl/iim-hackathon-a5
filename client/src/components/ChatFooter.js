@@ -8,14 +8,19 @@ const ChatFooter = ({ socket, user, selectedUser }) => {
 
   const handleSendMessage = (e) => {
     e.preventDefault();
-    if (message.trim()) {
+    // Send to other user
+    if (message.trim() && selectedUser) {
       socket.emit('message', {
         id: `${socket.id}${Math.random()}`,
         text: message,
         from: user.id,
         to: selectedUser.id,
       });
-	  }
+
+    // Send to bot
+	  } else if(message.trim()) {
+      console.log('Talking with a bot...');
+    }
     setMessage('');
   };
   return (
