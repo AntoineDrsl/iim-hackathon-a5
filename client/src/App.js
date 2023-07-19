@@ -10,7 +10,6 @@ const socket = socketIO.connect('http://localhost:4000');
 function App() {
   const userName = 'Antoine';
   localStorage.setItem('userName', userName);
-  socket.emit('newUser', { userName, socketID: socket.id });
 
   return (
     <BrowserRouter>

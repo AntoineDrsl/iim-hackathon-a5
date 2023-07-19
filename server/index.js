@@ -10,6 +10,7 @@ const socketIO = require('socket.io')(server, {
 });
 const { Configuration, OpenAIApi } = require("openai");
 const bodyParser = require('body-parser');
+const data = require('./../client/src/assets/data.json')
 
 
 app.use(function(req, res, next) {
@@ -25,9 +26,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 // Socket
-let users = [];
+let users = data.students
+
 socketIO.on('connection', (socket) => {
     console.log(`⚡: ${socket.id} user just connected!`);
+	socketIO.emit('newUserResponse', users);
 
 	//Listens and logs the message to the console
 	socket.on('message', (data) => {
@@ -35,11 +38,6 @@ socketIO.on('connection', (socket) => {
 	});
 
 	socket.on('typing', (data) => socket.broadcast.emit('typingResponse', data));
-
-	socket.on('newUser', (data) => {
-		users.push(data);
-		socketIO.emit('newUserResponse', users);
-	});
 
     socket.on('disconnect', () => {
       console.log('🔥: A user disconnected');
