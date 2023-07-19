@@ -10,6 +10,7 @@ const socketIO = require('socket.io')(server, {
 });
 const { Configuration, OpenAIApi } = require("openai");
 const bodyParser = require('body-parser');
+const data = require('./../client/src/assets/data.json')
 
 
 app.use(function(req, res, next) {
@@ -25,28 +26,48 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 // Socket
-let users = [];
-socketIO.on('connection', (socket) => {
-    console.log(`⚡: ${socket.id} user just connected!`);
+const users = data.students
+const messages = []
 
-	//Listens and logs the message to the console
-	socket.on('message', (data) => {
-		socketIO.emit('messageResponse', data);
+socketIO.on('connection', (socket) => {
+  console.log(`⚡: ${socket.id} user just connected!`);
+
+  // Get new user (in order)
+  const newUser = users.find(u => !u.connected);
+  newUser.connected = 1
+  newUser.socketId = socket.id
+	socketIO.to(socket.id).emit('newUserResponse', {
+    user: newUser,
+    users: users.filter(u => u.id !== newUser.id),
+  });
+
+	// Listens and logs the message to the console
+	socket.on('message', (message) => {
+    messages.push(message);
+
+    const sender = users.find(u => u.id === message.from);
+    const receiver = users.find(u => u.id === message.to);
+
+    // Send to sender and receiver
+		socketIO.to([sender.socketId, receiver.socketId]).emit('messageResponse', messages.filter(msg => (msg.from === sender.id && msg.to === receiver.id) || (msg.from === receiver.id && msg.to === sender.id)));
 	});
 
+  socket.on('getHistory', selectedUser => {
+    const currentUser = users.find(u => u.socketId === socket.id);
+		socketIO.to(socket.id).emit('getHistoryResponse', messages.filter(msg => (msg.from === currentUser.id && msg.to === selectedUser.id) || (msg.from === selectedUser.id && msg.to === currentUser.id)));
+  })
+
+  // Typing
 	socket.on('typing', (data) => socket.broadcast.emit('typingResponse', data));
 
-	socket.on('newUser', (data) => {
-		users.push(data);
-		socketIO.emit('newUserResponse', users);
-	});
-
-    socket.on('disconnect', () => {
-      console.log('🔥: A user disconnected');
-	  users = users.filter((user) => user.socketID !== socket.id);
-	  socketIO.emit('newUserResponse', users);
-	  socket.disconnect();
-    });
+  // Disconnect
+  socket.on('disconnect', () => {
+    console.log('🔥: A user disconnected');
+    const user = users.find(u => u.socketId === socket.id);
+    user.connected = 0;
+    user.socketId = null;
+    socket.disconnect();
+  });
 });
 
 // Test route

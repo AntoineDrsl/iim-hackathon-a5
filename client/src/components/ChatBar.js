@@ -1,20 +1,21 @@
-import React, { useState, useEffect } from 'react';
-
-const ChatBar = ({ socket }) => {
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    socket.on('newUserResponse', (data) => setUsers(data));
-  }, [socket, users]);
-
+const ChatBar = ({ users, selectedUser, handleSetSelectedUser }) => {
   return (
-    <div className="chat__sidebar">
-      <h2>Open Chat</h2>
-      <div>
-        <h4 className="chat__header">ACTIVE USERS</h4>
-        <div className="chat__users">
+    <div style={{width: "100%", height: "100%", paddingLeft: "20px", borderRight: "1px solid lightgrey"}}>      
+      <div style={{display: "flex", justifyContent: "space-between", alignItems: "center", height: "75px"}}>
+        <h1 style={{color: "#6758A2"}}>Conversations</h1>
+      </div>
+      <div style={{height: "100%"}}>
+        <h4 style={{marginBottom: "10px"}}>Messages</h4>
+        <div style={{height: "450px", overflowY: "scroll"}}>
           {users.map((user) => (
-            <p key={user.socketID}>{user.userName}</p>
+            <div
+              style={{width: "100%", height: "50px", display: "flex", justifyContent: "start", alignItems: "center", cursor: "pointer", paddingLeft: "10px", backgroundColor: `${user.id === selectedUser.id ? 'lightgrey': ''}`}}
+              key={user.id}
+              onClick={() => handleSetSelectedUser(user)}
+            >
+              <img src={require(`../assets/${user.image}`)} alt={user.nom} style={{borderRadius: "50px", marginRight: "15px", height: "40px", width: "40px"}} />
+              <p>{user.nom}</p>
+            </div>
           ))}
         </div>
       </div>
