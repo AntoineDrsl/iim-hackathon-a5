@@ -1,0 +1,193 @@
+{
+  "etudiants": [
+    {
+      "nom": "Antoine Durussel",
+      "identifiant": "AD001",
+      "ecole": "IIM",
+      "email": "antoine.durussel@example.com",
+      "promotion": "2021",
+      "entreprise": "Acme Corp",
+      "poste": "Ingénieur logiciel"
+    },
+    {
+      "nom": "Allan Duche",
+      "identifiant": "AD002",
+      "ecole": "ESILV",
+      "email": "allan.duche@example.com",
+      "promotion": "2019",
+      "entreprise": "Tech Solutions",
+      "poste": "Chef de projet"
+    },
+    {
+      "nom": "Emma Martin",
+      "identifiant": "EM001",
+      "ecole": "EMLV",
+      "email": "emma.martin@example.com",
+      "promotion": "2020",
+      "entreprise": "Global Finance",
+      "poste": "Analyste financier"
+    },
+    {
+      "nom": "Louis Dupont",
+      "identifiant": "LD001",
+      "ecole": "IIM",
+      "email": "louis.dupont@example.com",
+      "promotion": "2022",
+      "entreprise": "Tech Innovations",
+      "poste": "Développeur Web"
+    },
+    {
+      "nom": "Sophie Lecomte",
+      "identifiant": "SL001",
+      "ecole": "ESILV",
+      "email": "sophie.lecomte@example.com",
+      "promotion": "2018",
+      "entreprise": "Digital Solutions",
+      "poste": "Consultante en stratégie"
+    },
+    {
+      "nom": "Pierre Dubois",
+      "identifiant": "PD001",
+      "ecole": "EMLV",
+      "email": "pierre.dubois@example.com",
+      "promotion": "2019",
+      "entreprise": "Finance Group",
+      "poste": "Analyste financier"
+    },
+    {
+      "nom": "Julie Moreau",
+      "identifiant": "JM001",
+      "ecole": "IIM",
+      "email": "julie.moreau@example.com",
+      "promotion": "2023",
+      "entreprise": "Tech Solutions",
+      "poste": "Développeuse logiciel"
+    },
+    {
+      "nom": "Thomas Lefevre",
+      "identifiant": "TL001",
+      "ecole": "ESILV",
+      "email": "thomas.lefevre@example.com",
+      "promotion": "2022",
+      "entreprise": "Innovation Labs",
+      "poste": "Ingénieur R&D"
+    },
+    {
+      "nom": "Elodie Simon",
+      "identifiant": "ES001",
+      "ecole": "EMLV",
+      "email": "elodie.simon@example.com",
+      "promotion": "2020",
+      "entreprise": "Global Finance",
+      "poste": "Analyste financier"
+    },
+    {
+      "nom": "Alexandre Martin",
+      "identifiant": "AM001",
+      "ecole": "IIM",
+      "email": "alexandre.martin@example.com",
+      "promotion": "2023",
+      "entreprise": "Tech Innovations",
+      "poste": "Développeur Web"
+    },
+    {
+      "nom": "Camille Dupuis",
+      "identifiant": "CD001",
+      "ecole": "ESILV",
+      "email": "camille.dupuis@example.com",
+      "promotion": "2021",
+      "entreprise": "Digital Solutions",
+      "poste": "Consultante en stratégie"
+    },
+    {
+      "nom": "Nicolas Lambert",
+      "identifiant": "NL001",
+      "ecole": "EMLV",
+      "email": "nicolas.lambert@example.com",
+      "promotion": "2019",
+      "entreprise": "Finance Group",
+      "poste": "Analyste financier"
+    },
+    {
+      "nom": "Laura Dubois",
+      "identifiant": "LD002",
+      "ecole": "IIM",
+      "email": "laura.dubois@example.com",
+      "promotion": "2022",
+      "entreprise": "Tech Solutions",
+      "poste": "Développeuse logiciel"
+    },
+    {
+      "nom": "Hugo Moreau",
+      "identifiant": "HM001",
+      "ecole": "ESILV",
+      "email": "hugo.moreau@example.com",
+      "promotion": "2018",
+      "entreprise": "Innovation Labs",
+      "poste": "Ingénieur R&D"
+    },
+    {
+      "nom": "Mathilde Dupont",
+      "identifiant": "MD001",
+      "ecole": "EMLV",
+      "email": "mathilde.dupont@example.com",
+      "promotion": "2020",
+      "entreprise": "Global Finance",
+      "poste": "Analyste financier"
+    },
+    {
+      "nom": "Émilie Lefevre",
+      "identifiant": "EL001",
+      "ecole": "IIM",
+      "email": "emilie.lefevre@example.com",
+      "promotion": "2023",
+      "entreprise": "Tech Innovations",
+      "poste": "Développeuse Web"
+    },
+    {
+      "nom": "Lucas Simon",
+      "identifiant": "LS001",
+      "ecole": "ESILV",
+      "email": "lucas.simon@example.com",
+      "promotion": "2021",
+      "entreprise": "Digital Solutions",
+      "poste": "Consultant en stratégie"
+    },
+    {
+      "nom": "Emma Lambert",
+      "identifiant": "EL002",
+      "ecole": "EMLV",
+      "email": "emma.lambert@example.com",
+      "promotion": "2019",
+      "entreprise": "Finance Group",
+      "poste": "Analyste financier"
+    },
+    {
+      "nom": "Hugo Martin",
+      "identifiant": "HM002",
+      "ecole": "IIM",
+      "email": "hugo.martin@example.com",
+      "promotion": "2022",
+      "entreprise": "Tech Solutions",
+      "poste": "Développeur logiciel"
+    },
+    {
+      "nom": "Manon Dupuis",
+      "identifiant": "MD002",
+      "ecole": "ESILV",
+      "email": "manon.dupuis@example.com",
+      "promotion": "2020",
+      "entreprise": "Innovation Labs",
+      "poste": "Ingénieure R&D"
+    },
+    {
+      "nom": "Lucie Moreau",
+      "identifiant": "LM001",
+      "ecole": "EMLV",
+      "email": "lucie.moreau@example.com",
+      "promotion": "2021",
+      "entreprise": "Global Finance",
+      "poste": "Analyste financier"
+    }
+  ]
+}
