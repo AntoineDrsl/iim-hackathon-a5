@@ -31,7 +31,6 @@ const ChatPage = ({ socket }) => {
 
 	useEffect(() => {
 		socket.on('getHistoryResponse', (messages) => {
-			console.log(messages, user, selectedUser)
 			setMessages(messages)
 		});
 	}, [socket, messages]);

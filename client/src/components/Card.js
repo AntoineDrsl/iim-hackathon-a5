@@ -1,19 +1,16 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import femme from '../assets/femme.png';
-import homme from '../assets/homme.png';
 
-const Card = ({ socket, name, school, promo, formation, entreprise, poste }) => {
+const Card = ({ socket, name, school, promo, formation, entreprise, poste, image }) => {
   const navigate = useNavigate();
-  const random = Math.floor(Math.random() * 2);
-  
+
   return (
     <div className='card-container'>
       <div className='card-header'>
-        <img
-          className='card-img'
-          src={`${random === 0 ? femme : homme}`}
+        <img 
+          src={require(`../assets/${image}`)} 
           alt={name}
+          className="card-img"
         />
         <div className='card-header-profil'>
           <p className={'card-name card-header-content'}>{name}</p>

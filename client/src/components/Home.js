@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 import UserList from "./UserList";
 
 const Home = ({ socket }) => {
-  const navigate = useNavigate();
-
   return (
     <div className='container-react'>
       <section className="af-layout-module">

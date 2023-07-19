@@ -1,21 +1,24 @@
 import React, {useState} from 'react';
-import { useNavigate } from 'react-router-dom';
 import data from '../assets/data.json';
 import Card from "./Card";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
 
 const UserList = ({ socket }) => {
-  const navigate = useNavigate();
   const students = data.students;
   const [filteredStudents, setFilteredStudents] = useState(students);
   const [searchValue, setSearchValue] = useState('');
-  const handleSubmit = (e) => {
-  };
   
   const handleChange = (e) => {
     setSearchValue(e.target.value);
-    const filteredStudent = students.filter(student => student.nom.toLowerCase().includes(e.target.value));
+    const filteredStudent = students.filter(student => 
+      student.nom.toLowerCase().includes(e.target.value.toLowerCase()) 
+      || student.ecole.toLowerCase().includes(e.target.value.toLowerCase())
+      || student.promotion.includes(e.target.value)
+      || student.email.toLowerCase().includes(e.target.value.toLowerCase())
+      || student.entreprise.toLowerCase().includes(e.target.value.toLowerCase())
+      || student.poste.toLowerCase().includes(e.target.value.toLowerCase())
+    );
     if(filteredStudent.length > 0){
       setFilteredStudents(filteredStudent);
     } else {
@@ -50,6 +53,7 @@ const UserList = ({ socket }) => {
               formation={'IIM'}
               entreprise={user.entreprise}
               poste={user.poste}
+              image={user.image}
             />
           ))
         }
