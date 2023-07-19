@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ChatBody = ({ selectedUser, messages, typingStatus, lastMessageRef }) => {
+const ChatBody = ({ user, selectedUser, messages, typingStatus, lastMessageRef }) => {
   return (
     <>
       <header style={{height: "50px", paddingLeft: "20px", borderBottom: "solid lightgrey 1px"}}>
@@ -14,27 +14,27 @@ const ChatBody = ({ selectedUser, messages, typingStatus, lastMessageRef }) => {
       </header>
 
       <div id="messageContainer" className="message__container">
-        {messages.map((message) =>
-          message.name === localStorage.getItem('userName') ? (
+        {messages.map((message, i) =>
+          message.from === user.id && message.to === selectedUser.id ? (
             <div className="message__chats" key={message.id}>
-              <p className="sender__name">Vous</p>
+              {/* <p className="sender__name">Vous</p> */}
               <div className="message__sender">
                 <p>{message.text}</p>
               </div>
             </div>
-          ) : (
+          ) : (message.from === selectedUser.id && message.to === user.id ? (
             <div className="message__chats" key={message.id}>
-              <p>{message.name}</p>
+              {/* <p>{selectedUser.nom}</p> */}
               <div className="message__recipient">
                 <p>{message.text}</p>
               </div>
             </div>
-          )
+          ) : (<div key={i}></div>))
         )}
 
-        <div className="message__status">
+        {/* <div className="message__status">
           <p>{typingStatus}</p>
-        </div>
+        </div> */}
 
         <div ref={lastMessageRef} />
       </div>

@@ -26,7 +26,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 // Socket
-let users = data.students
+const users = data.students
+const messages = []
 
 socketIO.on('connection', (socket) => {
   console.log(`⚡: ${socket.id} user just connected!`);
@@ -41,9 +42,20 @@ socketIO.on('connection', (socket) => {
   });
 
 	// Listens and logs the message to the console
-	socket.on('message', (data) => {
-		socketIO.emit('messageResponse', data);
+	socket.on('message', (message) => {
+    messages.push(message);
+
+    const sender = users.find(u => u.id === message.from);
+    const receiver = users.find(u => u.id === message.to);
+
+    // Send to sender and receiver
+		socketIO.to([sender.socketId, receiver.socketId]).emit('messageResponse', messages.filter(msg => (msg.from === sender.id && msg.to === receiver.id) || (msg.from === receiver.id && msg.to === sender.id)));
 	});
+
+  socket.on('getHistory', selectedUser => {
+    const currentUser = users.find(u => u.socketId === socket.id);
+		socketIO.to(socket.id).emit('getHistoryResponse', messages.filter(msg => (msg.from === currentUser.id && msg.to === selectedUser.id) || (msg.from === selectedUser.id && msg.to === currentUser.id)));
+  })
 
   // Typing
 	socket.on('typing', (data) => socket.broadcast.emit('typingResponse', data));

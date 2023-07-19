@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ChatFooter = ({ socket }) => {
+const ChatFooter = ({ socket, user, selectedUser }) => {
   const [message, setMessage] = useState('');
 
   const handleTyping = () =>
@@ -8,12 +8,12 @@ const ChatFooter = ({ socket }) => {
 
   const handleSendMessage = (e) => {
     e.preventDefault();
-    if (message.trim() && localStorage.getItem('userName')) {
+    if (message.trim()) {
       socket.emit('message', {
-        text: message,
-        name: localStorage.getItem('userName'),
         id: `${socket.id}${Math.random()}`,
-        socketID: socket.id,
+        text: message,
+        from: user.id,
+        to: selectedUser.id,
       });
 	  }
     setMessage('');

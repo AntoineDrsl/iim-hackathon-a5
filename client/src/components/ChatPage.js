@@ -11,21 +11,29 @@ const ChatPage = ({ socket }) => {
 	const [user, setUser] = useState({});
 	const [selectedUser, setSelectedUser] = useState(users[0])
 
-	const handleSetSelectedUser = user => {
-		setSelectedUser(user)
+	const handleSetSelectedUser = selectedUser => {
+		socket.emit('getHistory', selectedUser);
+		setSelectedUser(selectedUser);
 	}
 
 	useEffect(() => {
 		socket.on('newUserResponse', (data) => {
-			console.log(data)
-			setUsers(data.users)
-			setUser(data.user)
-			setSelectedUser(data.users[0])
+			setUsers(data.users);
+			setUser(data.user);
+			setSelectedUser(data.users[0]);
+			socket.emit('getHistory', data.users[0]);
 		});
 	}, [socket, users]);
 
 	useEffect(() => {
-		socket.on('messageResponse', (data) => setMessages([...messages, data]));
+		socket.on('messageResponse', (messages) => setMessages(messages));
+	}, [socket, messages]);
+
+	useEffect(() => {
+		socket.on('getHistoryResponse', (messages) => {
+			console.log(messages, user, selectedUser)
+			setMessages(messages)
+		});
 	}, [socket, messages]);
 
 	useEffect(() => {
@@ -80,12 +88,17 @@ const ChatPage = ({ socket }) => {
 		</div>
 		<div  style={{width: "75%"}}>
 			<ChatBody 
+				user={user}
 				selectedUser={selectedUser}
 				messages={messages}
 				typingStatus={typingStatus}
 				lastMessageRef={lastMessageRef} 
 			/>
-			<ChatFooter socket={socket} />
+			<ChatFooter 
+				socket={socket} 
+				user={user}
+				selectedUser={selectedUser}
+			/>
 		</div>
 	</div>
   );
