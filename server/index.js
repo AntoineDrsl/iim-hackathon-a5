@@ -1,6 +1,5 @@
 const PORT = 4000;
 const express = require('express');
-const axios = require("axios");
 const app = express();
 const server = require('http').createServer(app);
 const socketIO = require('socket.io')(server, {
@@ -11,7 +10,6 @@ const socketIO = require('socket.io')(server, {
 const { Configuration, OpenAIApi } = require("openai");
 const bodyParser = require('body-parser');
 const data = require('./../client/src/assets/data.json')
-
 
 app.use(function(req, res, next) {
     res.setHeader("Content-Type", "application/json");
@@ -52,9 +50,25 @@ socketIO.on('connection', (socket) => {
 		socketIO.to([sender.socketId, receiver.socketId]).emit('messageResponse', messages.filter(msg => (msg.from === sender.id && msg.to === receiver.id) || (msg.from === receiver.id && msg.to === sender.id)));
 	});
 
+  // Get history
   socket.on('getHistory', selectedUser => {
     const currentUser = users.find(u => u.socketId === socket.id);
 		socketIO.to(socket.id).emit('getHistoryResponse', messages.filter(msg => (msg.from === currentUser.id && msg.to === selectedUser.id) || (msg.from === selectedUser.id && msg.to === currentUser.id)));
+  })
+
+  socket.on('getChatbotHistory', () => {
+    const currentUser = users.find(u => u.socketId === socket.id);
+		socketIO.to(socket.id).emit('getChatbotHistoryResponse', currentUser.chatbotMessages);
+  })
+
+  socket.on('chatbot', data => {
+    const currentUser = users.find(u => u.socketId === socket.id);
+    currentUser.chatbotMessages.push({
+      id: data.id,
+      message: data.message,
+      response: data.response,
+    })
+    socketIO.to(socket.id).emit('chatbotResponse', currentUser.chatbotMessages);
   })
 
   // Typing
@@ -78,27 +92,28 @@ app.get('/api', (req, res) => {
 });
 
 const configuration = new Configuration({
-    organization: "org-DugElkDJb22kcqyz8lY1PblU",
-    apiKey: "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",
+    organization: "org-GcpmWMKjECb4p8505NSs0pmd",
+    apiKey: "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",
 });
 const openai = new OpenAIApi(configuration);
 
-
 // GPT route
-app.post('/gpt', async (req, res) => {
+app.post('/chatbot', async (req, res) => {
 	try {
-		const ASSISTANT = {"role": "system", "content": req.body.text};
-        const response = await openai.createChatCompletion({
-            model: "gpt-3.5-turbo",
-			messages: [
-                ASSISTANT
-            ]
-        });
-        res.send(response.data);
-    } catch (e) {
-        console.log({ e });
-    }
-  });
+    const response = await openai.createChatCompletion({
+      model: "gpt-3.5-turbo",
+      messages: [
+        {"role": "system", "content": "Réponds aux prochaines questions concernant les étudiants que je vais te donner dans un fichier JSON que tu dois parser. Si ce n'est pas le sujet, dis que tu ne sais pas répondre à la question. Ne précise pas dans tes réponses que tu trouves les informations dans un fichier JSON. Lorsqu'on cherche un étudiant, ne donne que son nom et son adresse email pour le contacter."},
+        {"role": "system", "content": JSON.stringify(data.students.slice(0, 5))},
+        {"role": "user", "content": req.body.text},
+      ]
+    });
+    console.log(response.data)
+    res.send(response.data);
+  } catch (e) {
+      console.log({ e });
+  }
+});
 
 // Launch server
 server.listen(PORT, () => console.log('Server started at port : ' + PORT));

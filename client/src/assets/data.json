@@ -8,7 +8,8 @@
 		"promotion": "2021",
 		"entreprise": "Acme Corp",
 		"poste": "Ingénieur logiciel",
-		"image": "profil-5.png"
+		"image": "profil-5.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Allan Duche",
@@ -18,7 +19,8 @@
 		"promotion": "2019",
 		"entreprise": "Tech Solutions",
 		"poste": "Chef de projet",
-		"image": "profil-6.png"
+		"image": "profil-6.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Emma Martin",
@@ -28,7 +30,8 @@
 		"promotion": "2020",
 		"entreprise": "Global Finance",
 		"poste": "Analyste financier",
-		"image": "profil-7.png"
+		"image": "profil-7.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Louis Dupont",
@@ -38,7 +41,8 @@
 		"promotion": "2022",
 		"entreprise": "Tech Innovations",
 		"poste": "Développeur Web",
-		"image": "profil-8.png"
+		"image": "profil-8.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Sophie Lecomte",
@@ -48,7 +52,8 @@
 		"promotion": "2018",
 		"entreprise": "Digital Solutions",
 		"poste": "Consultante en stratégie",
-		"image": "profil-9.png"
+		"image": "profil-9.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Pierre Dubois",
@@ -58,7 +63,8 @@
 		"promotion": "2019",
 		"entreprise": "Finance Group",
 		"poste": "Analyste financier",
-		"image": "profil-10.png"
+		"image": "profil-10.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Julie Moreau",
@@ -68,7 +74,8 @@
 		"promotion": "2023",
 		"entreprise": "Tech Solutions",
 		"poste": "Développeuse logiciel",
-		"image": "profil-11.png"
+		"image": "profil-11.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Elodie Simon",
@@ -78,7 +85,8 @@
 		"promotion": "2020",
 		"entreprise": "Global Finance",
 		"poste": "Analyste financier",
-		"image": "profil-12.png"
+		"image": "profil-12.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Alexandre Martin",
@@ -88,7 +96,8 @@
 		"promotion": "2023",
 		"entreprise": "Tech Innovations",
 		"poste": "Développeur Web",
-		"image": "profil-13.png"
+		"image": "profil-13.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Camille Dupuis",
@@ -98,7 +107,8 @@
 		"promotion": "2021",
 		"entreprise": "Digital Solutions",
 		"poste": "Consultante en stratégie",
-		"image": "profil-14.png"
+		"image": "profil-14.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Nicolas Lambert",
@@ -108,7 +118,8 @@
 		"promotion": "2019",
 		"entreprise": "Finance Group",
 		"poste": "Analyste financier",
-		"image": "profil-15.png"
+		"image": "profil-15.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Laura Dubois",
@@ -118,7 +129,8 @@
 		"promotion": "2022",
 		"entreprise": "Tech Solutions",
 		"poste": "Développeuse logiciel",
-		"image": "profil-16.png"
+		"image": "profil-16.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Hugo Moreau",
@@ -128,7 +140,8 @@
 		"promotion": "2018",
 		"entreprise": "Innovation Labs",
 		"poste": "Ingénieur R&D",
-		"image": "profil-17.png"
+		"image": "profil-17.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Mathilde Dupont",
@@ -138,7 +151,8 @@
 		"promotion": "2020",
 		"entreprise": "Global Finance",
 		"poste": "Analyste financier",
-		"image": "profil-18.png"
+		"image": "profil-18.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Émilie Lefevre",
@@ -148,7 +162,8 @@
 		"promotion": "2023",
 		"entreprise": "Tech Innovations",
 		"poste": "Développeuse Web",
-		"image": "profil-19.png"
+		"image": "profil-19.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Lucas Simon",
@@ -158,7 +173,8 @@
 		"promotion": "2021",
 		"entreprise": "Digital Solutions",
 		"poste": "Consultant en stratégie",
-		"image": "profil-20.png"
+		"image": "profil-20.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Emma Lambert",
@@ -168,7 +184,8 @@
 		"promotion": "2019",
 		"entreprise": "Finance Group",
 		"poste": "Analyste financier",
-		"image": "profil-21.png"
+		"image": "profil-21.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Hugo Martin",
@@ -178,7 +195,8 @@
 		"promotion": "2022",
 		"entreprise": "Tech Solutions",
 		"poste": "Développeur logiciel",
-		"image": "profil-22.png"
+		"image": "profil-22.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Manon Dupuis",
@@ -188,7 +206,8 @@
 		"promotion": "2020",
 		"entreprise": "Innovation Labs",
 		"poste": "Ingénieure R&D",
-		"image": "profil-23.png"
+		"image": "profil-23.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Lucie Moreau",
@@ -198,7 +217,8 @@
 		"promotion": "2021",
 		"entreprise": "Global Finance",
 		"poste": "Analyste financier",
-		"image": "profil-24.png"
+		"image": "profil-24.png",
+		"chatbotMessages": []
 	  }
 	]
 }

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
-const ChatFooter = ({ socket, user, selectedUser }) => {
+const ChatFooter = ({ socket, user, selectedUser, botActivated, chatbotMessages, handleSetChatbotMessages }) => {
   const [message, setMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleTyping = () =>
     socket.emit('typing', `${localStorage.getItem('userName')} is typing...`);
@@ -18,8 +20,21 @@ const ChatFooter = ({ socket, user, selectedUser }) => {
       });
 
     // Send to bot
-	  } else if(message.trim()) {
-      console.log('Talking with a bot...');
+	  } else if(message.trim() && botActivated && !isLoading) {
+      setIsLoading(true);
+      const id = `${socket.id}${Math.random()}`;
+      chatbotMessages.push({ id: id, message: message, response: null });
+      handleSetChatbotMessages(chatbotMessages);
+      axios.post('http://localhost:4000/chatbot', {
+        text: message,
+      }).then(res => {
+        socket.emit('chatbot', {
+          id: id,
+          message: message,
+          response: res.data?.choices ? res.data.choices[0].message.content : 'Désolé, je ne saurais répondre à votre question.',
+        });
+        setIsLoading(false);
+      })
     }
     setMessage('');
   };
@@ -35,7 +50,7 @@ const ChatFooter = ({ socket, user, selectedUser }) => {
           onChange={(e) => setMessage(e.target.value)}
           onKeyDown={handleTyping}
         />
-        <button className="sendBtn">Envoyer</button>
+        <button className="sendBtn">{ botActivated && isLoading ? '...' : 'Envoyer'}</button>
       </form>
     </div>
   );
