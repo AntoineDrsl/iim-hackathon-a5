@@ -12,7 +12,7 @@ const UserList = ({ socket }) => {
   return (
     <>
       {
-        data.map((user, index) => (
+        data.etudiants.map((user, index) => (
           <Card
             key={index}
             socket={socket}
