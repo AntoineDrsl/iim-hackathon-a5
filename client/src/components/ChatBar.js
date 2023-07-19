@@ -4,9 +4,9 @@ const ChatBar = ({ users, selectedUser, handleSetUser }) => {
       <div style={{display: "flex", justifyContent: "space-between", alignItems: "center", height: "75px"}}>
         <h1 style={{color: "#6758A2"}}>Conversations</h1>
       </div>
-      <div>
+      <div style={{height: "100%"}}>
         <h4 style={{marginBottom: "10px"}}>Messages</h4>
-        <div style={{height: "500px", overflowY: "scroll"}}>
+        <div style={{height: "450px", overflowY: "scroll"}}>
           {users.map((user) => (
             <div
               style={{width: "100%", height: "50px", display: "flex", justifyContent: "start", alignItems: "center", cursor: "pointer", paddingLeft: "10px", backgroundColor: `${user.identifiant === selectedUser.identifiant ? 'lightgrey': ''}`}}

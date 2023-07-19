@@ -35,7 +35,7 @@ const ChatPage = ({ socket }) => {
 	}, [socket]);
 
   return (
-    <div style={{width: "100%", display: "flex"}}>
+    <div style={{width: "100%", height: "80vh", display: "flex"}}>
 		<div style={{width: "25%", height: "100%"}}>
 			<ChatBar 
 				users={users} 
