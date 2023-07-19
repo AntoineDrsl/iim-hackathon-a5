@@ -6,8 +6,8 @@ const Home = ({ socket }) => {
   const navigate = useNavigate();
 
   return (
-    <div className='container'>
-      <section className="  af-layout-module">
+    <div className='container-react'>
+      <section className="af-layout-module">
         <div className="no-padding no-margin af-layout-module-content af-module-news
                                     af-layout-module-content--upper
                 ">
@@ -31,7 +31,11 @@ const Home = ({ socket }) => {
           </div>
         </div>
       </section>
-      <UserList />
+      <section className='recherche'>
+        <div className='recherche-bar'>
+        </div>
+        <UserList />
+      </section>
     </div>
   );
 };
