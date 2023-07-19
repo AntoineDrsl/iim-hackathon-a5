@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const UserList = ({ socket, img, name, school, promo, formation, entreprise, poste }) => {
+const Card = ({ socket, img, name, school, promo, formation, entreprise, poste }) => {
   const navigate = useNavigate();
   
   return (
@@ -26,4 +26,4 @@ const UserList = ({ socket, img, name, school, promo, formation, entreprise, pos
   );
 };
 
-export default UserList;
+export default Card;
