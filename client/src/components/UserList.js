@@ -17,7 +17,7 @@ const UserList = ({ socket }) => {
       || student.promotion.includes(e.target.value)
       || student.email.toLowerCase().includes(e.target.value.toLowerCase())
       || student.entreprise.toLowerCase().includes(e.target.value.toLowerCase())
-      || student.poste.toLowerCase().includes(e.target.value.toLowerCase())
+      || student.poste.toLowerCase().includes(e.target.value.toLowerCase())
     );
     if(filteredStudent.length > 0){
       setFilteredStudents(filteredStudent);
