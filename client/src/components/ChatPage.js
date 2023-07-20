@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import ChatBar from './ChatBar';
 import ChatBody from './ChatBody';
 import ChatFooter from './ChatFooter';
+import {useParams} from "react-router-dom";
 
 const ChatPage = ({ socket }) => {
 	const [messages, setMessages] = useState([]);
@@ -12,6 +13,8 @@ const ChatPage = ({ socket }) => {
 	const [user, setUser] = useState({});
 	const [selectedUser, setSelectedUser] = useState(users[0])
 	const [botActivated, setBotActivated] = useState(false);
+	
+	const { id } = useParams()
 
 	const handleSetSelectedUser = selectedUser => {
 		setBotActivated(false);
@@ -35,7 +38,11 @@ const ChatPage = ({ socket }) => {
 		socket.on('newUserResponse', (data) => {
 			setUsers(data.users);
 			setUser(data.user);
-			setSelectedUser(data.users[0]);
+			if(id){
+				setSelectedUser(data.users.find(element => element.id === id));
+			} else {
+				setSelectedUser(data.users[0]);
+			}
 			socket.emit('getHistory', data.users[0]);
 		});
 	}, [socket, users]);

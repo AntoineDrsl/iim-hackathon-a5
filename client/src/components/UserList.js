@@ -39,13 +39,13 @@ const UserList = ({ socket }) => {
             placeholder={'Chercher un alumni'}
           />
         </div>
-        
       </div>
       <div className='user-list-container'>
         {
           filteredStudents.map((user, index) => (
             <Card
               key={index}
+              id={user.id}
               socket={socket}
               name={user.nom}
               school={user.ecole}

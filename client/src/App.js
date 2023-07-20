@@ -12,8 +12,9 @@ function App() {
     <BrowserRouter>
       <div>
         <Routes>
-          <Route path="/" element={<Home socket={socket} />}></Route>
-          <Route path="/chat" element={<ChatPage socket={socket} />}></Route>
+          <Route path="/" element={<Home socket={socket} />}/>
+          <Route path="/chat" element={<ChatPage socket={socket} />}/>
+          <Route path="/chat/:id" element={<ChatPage socket={socket} />}/>
         </Routes>
       </div>
     </BrowserRouter>
