@@ -93,7 +93,7 @@ app.get('/api', (req, res) => {
 
 const configuration = new Configuration({
     organization: "org-GcpmWMKjECb4p8505NSs0pmd",
-    apiKey: "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",
+    apiKey: "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",
 });
 const openai = new OpenAIApi(configuration);
 
