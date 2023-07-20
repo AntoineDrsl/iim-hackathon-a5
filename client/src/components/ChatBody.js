@@ -5,11 +5,15 @@ const ChatBody = ({ user, selectedUser, messages, typingStatus, lastMessageRef, 
     <>
       <header style={{height: "50px", paddingLeft: "20px", borderBottom: "solid lightgrey 1px"}}>
         {
-          selectedUser &&
-          <div style={{display: "flex", justifyContent: "start", alignItems: "center", marginBottom: "10px", marginTop: "10px"}}>
+          selectedUser ?
+          (<div style={{display: "flex", justifyContent: "start", alignItems: "center", marginBottom: "10px", marginTop: "10px"}}>
             <img src={require(`../assets/${selectedUser.image}`)} alt={selectedUser.nom} style={{borderRadius: "50px", marginRight: "15px", height: "40px", width: "40px"}} />
             <h1>{ selectedUser.nom }</h1>
-          </div>
+          </div>) : 
+          (<div style={{display: "flex", justifyContent: "start", alignItems: "center", marginBottom: "10px", marginTop: "10px"}}>
+          <img src={require(`../assets/robot.png`)} alt="DeVinciBot" style={{borderRadius: "50px", marginRight: "15px", height: "40px", width: "40px"}} />
+          <h1>DeVinciBot</h1>
+        </div>)
         }
       </header>
 

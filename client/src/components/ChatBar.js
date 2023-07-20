@@ -13,7 +13,7 @@ const ChatBar = ({ users, selectedUser, handleSetSelectedUser, botActivated, han
             onClick={() => handleBotActivated(true)}
           >
             <img src={require(`../assets/robot.png`)} alt="DevinciBot" style={{borderRadius: "50px", marginRight: "15px", height: "40px", width: "40px"}} />
-            <p>DevinciBot</p>
+            <p>DeVinciBot</p>
           </div>
 
           {users.map((user) => (
