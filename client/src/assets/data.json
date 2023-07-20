@@ -4,51 +4,61 @@
 		"nom": "Antoine Durussel",
 		"id": "AD001",
 		"ecole": "IIM",
-		"email": "antoine.durussel@example.com",
-		"promotion": "2021",
-		"entreprise": "Acme Corp",
-		"poste": "Ingénieur logiciel",
-		"image": "profil-5.png"
+		"master": "IWM (Ingénieurie Web et Mobile)",
+		"email": "antoine.durussel@gmail.com",
+		"promotion": "2023",
+		"entreprise": "Magnétis",
+		"poste": "Développeur Fullstack",
+		"image": "profil-5.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Allan Duche",
 		"id": "AD002",
-		"ecole": "ESILV",
-		"email": "allan.duche@example.com",
-		"promotion": "2019",
-		"entreprise": "Tech Solutions",
-		"poste": "Chef de projet",
-		"image": "profil-6.png"
+		"ecole": "IIM",
+		"master": "IWM (Ingénieurie Web et Mobile)",
+		"email": "allan.duch2@gmail.com",
+		"promotion": "2023",
+		"entreprise": "EasyVista",
+		"poste": "Développeur Fullstack",
+		"image": "profil-6.png",
+		"chatbotMessages": []
 	  },
 	  {
-		"nom": "Emma Martin",
+		"nom": "Ilyes Khalfet",
 		"id": "EM001",
-		"ecole": "EMLV",
-		"email": "emma.martin@example.com",
-		"promotion": "2020",
-		"entreprise": "Global Finance",
-		"poste": "Analyste financier",
-		"image": "profil-7.png"
+		"ecole": "ESILV",
+		"master": "MTD (Master de la transoformation digitale)",
+		"email": "ilyes.khalfet@edu.devinci.fr",
+		"promotion": "2022",
+		"entreprise": "SNCF",
+		"poste": "Product Owner",
+		"image": "profil-7.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Louis Dupont",
 		"id": "LD001",
-		"ecole": "IIM",
-		"email": "louis.dupont@example.com",
+		"ecole": "EMLV",
+		"master": "Marketing et communication",
+		"email": "louis.dupont@orange.fr",
 		"promotion": "2022",
-		"entreprise": "Tech Innovations",
-		"poste": "Développeur Web",
-		"image": "profil-8.png"
+		"entreprise": "L'oréal",
+		"poste": "Community Manager",
+		"image": "profil-8.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Sophie Lecomte",
 		"id": "SL001",
-		"ecole": "ESILV",
+		"ecole": "IIM",
+		"master": "Stratégie social media",
 		"email": "sophie.lecomte@example.com",
 		"promotion": "2018",
-		"entreprise": "Digital Solutions",
-		"poste": "Consultante en stratégie",
-		"image": "profil-9.png"
+		"entreprise": "SNCF",
+		"poste": "Community Manager",
+		"image": "profil-9.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Pierre Dubois",
@@ -58,7 +68,8 @@
 		"promotion": "2019",
 		"entreprise": "Finance Group",
 		"poste": "Analyste financier",
-		"image": "profil-10.png"
+		"image": "profil-10.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Julie Moreau",
@@ -68,7 +79,8 @@
 		"promotion": "2023",
 		"entreprise": "Tech Solutions",
 		"poste": "Développeuse logiciel",
-		"image": "profil-11.png"
+		"image": "profil-11.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Elodie Simon",
@@ -78,7 +90,8 @@
 		"promotion": "2020",
 		"entreprise": "Global Finance",
 		"poste": "Analyste financier",
-		"image": "profil-12.png"
+		"image": "profil-12.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Alexandre Martin",
@@ -88,7 +101,8 @@
 		"promotion": "2023",
 		"entreprise": "Tech Innovations",
 		"poste": "Développeur Web",
-		"image": "profil-13.png"
+		"image": "profil-13.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Camille Dupuis",
@@ -98,7 +112,8 @@
 		"promotion": "2021",
 		"entreprise": "Digital Solutions",
 		"poste": "Consultante en stratégie",
-		"image": "profil-14.png"
+		"image": "profil-14.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Nicolas Lambert",
@@ -108,7 +123,8 @@
 		"promotion": "2019",
 		"entreprise": "Finance Group",
 		"poste": "Analyste financier",
-		"image": "profil-15.png"
+		"image": "profil-15.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Laura Dubois",
@@ -118,7 +134,8 @@
 		"promotion": "2022",
 		"entreprise": "Tech Solutions",
 		"poste": "Développeuse logiciel",
-		"image": "profil-16.png"
+		"image": "profil-16.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Hugo Moreau",
@@ -128,7 +145,8 @@
 		"promotion": "2018",
 		"entreprise": "Innovation Labs",
 		"poste": "Ingénieur R&D",
-		"image": "profil-17.png"
+		"image": "profil-17.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Mathilde Dupont",
@@ -138,7 +156,8 @@
 		"promotion": "2020",
 		"entreprise": "Global Finance",
 		"poste": "Analyste financier",
-		"image": "profil-18.png"
+		"image": "profil-18.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Émilie Lefevre",
@@ -148,7 +167,8 @@
 		"promotion": "2023",
 		"entreprise": "Tech Innovations",
 		"poste": "Développeuse Web",
-		"image": "profil-19.png"
+		"image": "profil-19.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Lucas Simon",
@@ -158,7 +178,8 @@
 		"promotion": "2021",
 		"entreprise": "Digital Solutions",
 		"poste": "Consultant en stratégie",
-		"image": "profil-20.png"
+		"image": "profil-20.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Emma Lambert",
@@ -168,7 +189,8 @@
 		"promotion": "2019",
 		"entreprise": "Finance Group",
 		"poste": "Analyste financier",
-		"image": "profil-21.png"
+		"image": "profil-21.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Hugo Martin",
@@ -178,7 +200,8 @@
 		"promotion": "2022",
 		"entreprise": "Tech Solutions",
 		"poste": "Développeur logiciel",
-		"image": "profil-22.png"
+		"image": "profil-22.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Manon Dupuis",
@@ -188,7 +211,8 @@
 		"promotion": "2020",
 		"entreprise": "Innovation Labs",
 		"poste": "Ingénieure R&D",
-		"image": "profil-23.png"
+		"image": "profil-23.png",
+		"chatbotMessages": []
 	  },
 	  {
 		"nom": "Lucie Moreau",
@@ -198,7 +222,8 @@
 		"promotion": "2021",
 		"entreprise": "Global Finance",
 		"poste": "Analyste financier",
-		"image": "profil-24.png"
+		"image": "profil-24.png",
+		"chatbotMessages": []
 	  }
 	]
 }

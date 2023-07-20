@@ -5,15 +5,30 @@ import ChatFooter from './ChatFooter';
 
 const ChatPage = ({ socket }) => {
 	const [messages, setMessages] = useState([]);
+	const [chatbotMessages, setChatbotMessages] = useState([]);
 	const [typingStatus, setTypingStatus] = useState('');
 	const lastMessageRef = useRef(null);
 	const [users, setUsers] = useState([]);
 	const [user, setUser] = useState({});
 	const [selectedUser, setSelectedUser] = useState(users[0])
+	const [botActivated, setBotActivated] = useState(false);
 
 	const handleSetSelectedUser = selectedUser => {
+		setBotActivated(false);
 		socket.emit('getHistory', selectedUser);
 		setSelectedUser(selectedUser);
+	}
+
+	const handleSetChatbotMessages = chatbotMessages => {
+		setChatbotMessages(chatbotMessages);
+	}
+
+	const handleBotActivated = botActivated => {
+		if(botActivated) {
+			setSelectedUser(null)
+			socket.emit('getChatbotHistory');
+		}
+		setBotActivated(botActivated);
 	}
 
 	useEffect(() => {
@@ -30,10 +45,16 @@ const ChatPage = ({ socket }) => {
 	}, [socket, messages]);
 
 	useEffect(() => {
-		socket.on('getHistoryResponse', (messages) => {
-			setMessages(messages)
-		});
+		socket.on('chatbotResponse', (chatbotMessages) => setChatbotMessages(chatbotMessages));
+	}, [socket, chatbotMessages]);
+
+	useEffect(() => {
+		socket.on('getHistoryResponse', (messages) => setMessages(messages));
 	}, [socket, messages]);
+
+	useEffect(() => {
+		socket.on('getChatbotHistoryResponse', (chatbotMessages) => setChatbotMessages(chatbotMessages));
+	}, [socket, chatbotMessages]);
 
 	useEffect(() => {
 		function scrollParentToChild(parent, child) {
@@ -83,6 +104,8 @@ const ChatPage = ({ socket }) => {
 				users={users} 
 				selectedUser={selectedUser}
 				handleSetSelectedUser={handleSetSelectedUser}
+				botActivated={botActivated}
+				handleBotActivated={handleBotActivated}
 			/>
 		</div>
 		<div  style={{width: "75%"}}>
@@ -92,11 +115,16 @@ const ChatPage = ({ socket }) => {
 				messages={messages}
 				typingStatus={typingStatus}
 				lastMessageRef={lastMessageRef} 
+				botActivated={botActivated}
+				chatbotMessages={chatbotMessages}
 			/>
 			<ChatFooter 
 				socket={socket} 
 				user={user}
 				selectedUser={selectedUser}
+				botActivated={botActivated}
+				chatbotMessages={chatbotMessages}
+				handleSetChatbotMessages={handleSetChatbotMessages}
 			/>
 		</div>
 	</div>
