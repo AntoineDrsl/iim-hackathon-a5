@@ -93,7 +93,7 @@ app.get('/api', (req, res) => {
 
 const configuration = new Configuration({
     organization: "org-GcpmWMKjECb4p8505NSs0pmd",
-    apiKey: "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",
+    apiKey: "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",
 });
 const openai = new OpenAIApi(configuration);
 
@@ -101,7 +101,7 @@ const openai = new OpenAIApi(configuration);
 app.post('/chatbot', async (req, res) => {
 	try {
     const messages = [
-      {"role": "system", "content": "Réponds aux prochaines questions concernant les étudiants que je vais te donner dans un fichier JSON que tu dois parser. Si le sujet ne concerne pas les étudiants ou les alumnis, dis que tu ne sais pas répondre à la question. Ne précise pas dans tes réponses que tu trouves les informations dans un fichier JSON. Lorsqu'on cherche un étudiant, ne donne que son nom et son adresse email pour le contacter."},
+      {"role": "system", "content": "Réponds aux prochaines questions concernant les étudiants que je vais te donner dans un fichier JSON que tu dois parser. Si le sujet ne concerne pas les étudiants ou les alumnis, dis que tu ne sais pas répondre à la question. Ne précise pas dans tes réponses que tu trouves les informations dans un fichier JSON. Lorsqu'on cherche un étudiant, tu peux préciser son nom, son email pour le contacter, l'école qu'il a fait, son poste actuel et son entreprise. Réponds sous forme de paragraphe rédigé."},
       {"role": "system", "content": JSON.stringify(data.students.slice(0, 5))},
     ];
     if(req.body.user && req.body.user.chatbotMessages) {
