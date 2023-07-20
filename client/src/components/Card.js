@@ -1,9 +1,6 @@
 import React from 'react';
-import {Link, useNavigate} from 'react-router-dom';
 
-const Card = ({ socket, id, name, school, promo, formation, entreprise, poste, image }) => {
-  const navigate = useNavigate();
-  
+const Card = ({ id, name, school, promo, formation, entreprise, poste, image }) => {
   return (
     <div className='card-container'>
       <div className='card-header'>
@@ -32,7 +29,7 @@ const Card = ({ socket, id, name, school, promo, formation, entreprise, poste, i
         <p className='card-exp-content'>{poste}</p>
       </div>
       <div className='contact-container'>
-        <Link className='contact' to={`/chat/${id}`} >Contacter</Link>
+        <a className='contact' href={`/chat/${id}`} >Contacter</a>
       </div>
       </div>
   );

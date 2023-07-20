@@ -2,8 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import ChatBar from './ChatBar';
 import ChatBody from './ChatBody';
 import ChatFooter from './ChatFooter';
-import {json, useParams} from "react-router-dom";
-import jsonData from '../assets/data.json';
+import {useParams} from "react-router-dom";
 
 const ChatPage = ({ socket }) => {
 	const [messages, setMessages] = useState([]);
@@ -34,18 +33,12 @@ const ChatPage = ({ socket }) => {
 		}
 		setBotActivated(botActivated);
 	}
-
-	useEffect(()=>{
-		if (id) {
-			setSelectedUser(jsonData.students.find(element => element.id === id));
-		}
-		setUsers(jsonData.students);
-	},[]);
 	
 	useEffect(() => {
 		socket.on('newUserResponse', (data) => {
 			setUsers(data.users);
 			setUser(data.user);
+			console.log('here')
 			if(id && id !== data.user.id){
 				setSelectedUser(data.users.find(element => element.id === id));
 			} else {

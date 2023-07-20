@@ -4,7 +4,7 @@ import Card from "./Card";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
 
-const UserList = ({ socket }) => {
+const UserList = () => {
   const students = data.students;
   const [filteredStudents, setFilteredStudents] = useState(students);
   const [searchValue, setSearchValue] = useState('');
@@ -46,7 +46,6 @@ const UserList = ({ socket }) => {
             <Card
               key={index}
               id={user.id}
-              socket={socket}
               name={user.nom}
               school={user.ecole}
               promo={user.promotion}
