@@ -4,7 +4,7 @@ import Card from "./Card";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
 
-const UserList = ({ socket }) => {
+const UserList = () => {
   const students = data.students;
   const [filteredStudents, setFilteredStudents] = useState(students);
   const [searchValue, setSearchValue] = useState('');
@@ -17,7 +17,7 @@ const UserList = ({ socket }) => {
       || student.promotion.includes(e.target.value)
       || student.email.toLowerCase().includes(e.target.value.toLowerCase())
       || student.entreprise.toLowerCase().includes(e.target.value.toLowerCase())
-      || student.poste.toLowerCase().includes(e.target.value.toLowerCase())
+      || student.poste.toLowerCase().includes(e.target.value.toLowerCase())
     );
     if(filteredStudent.length > 0){
       setFilteredStudents(filteredStudent);
@@ -39,14 +39,13 @@ const UserList = ({ socket }) => {
             placeholder={'Chercher un alumni'}
           />
         </div>
-        
       </div>
       <div className='user-list-container'>
         {
           filteredStudents.map((user, index) => (
             <Card
               key={index}
-              socket={socket}
+              id={user.id}
               name={user.nom}
               school={user.ecole}
               promo={user.promotion}
