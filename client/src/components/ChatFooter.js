@@ -27,6 +27,7 @@ const ChatFooter = ({ socket, user, selectedUser, botActivated, chatbotMessages,
       handleSetChatbotMessages(chatbotMessages);
       axios.post('http://localhost:4000/chatbot', {
         text: message,
+        user: user,
       }).then(res => {
         socket.emit('chatbot', {
           id: id,

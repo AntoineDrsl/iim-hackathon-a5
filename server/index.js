@@ -93,20 +93,28 @@ app.get('/api', (req, res) => {
 
 const configuration = new Configuration({
     organization: "org-GcpmWMKjECb4p8505NSs0pmd",
-    apiKey: "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",
+    apiKey: "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",
 });
 const openai = new OpenAIApi(configuration);
 
 // GPT route
 app.post('/chatbot', async (req, res) => {
 	try {
+    const messages = [
+      {"role": "system", "content": "Réponds aux prochaines questions concernant les étudiants que je vais te donner dans un fichier JSON que tu dois parser. Si le sujet ne concerne pas les étudiants ou les alumnis, dis que tu ne sais pas répondre à la question. Ne précise pas dans tes réponses que tu trouves les informations dans un fichier JSON. Lorsqu'on cherche un étudiant, ne donne que son nom et son adresse email pour le contacter."},
+      {"role": "system", "content": JSON.stringify(data.students.slice(0, 5))},
+    ];
+    if(req.body.user && req.body.user.chatbotMessages) {
+      req.body.user.chatbotMessages.map(chatbotMsg => {
+        messages.push({role: "user", content: chatbotMsg.message});
+        messages.push({role: "assistant", content: chatbotMsg.response});
+      })
+    }
+    messages.push({"role": "user", "content": req.body.text});
+
     const response = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
-      messages: [
-        {"role": "system", "content": "Réponds aux prochaines questions concernant les étudiants que je vais te donner dans un fichier JSON que tu dois parser. Si ce n'est pas le sujet, dis que tu ne sais pas répondre à la question. Ne précise pas dans tes réponses que tu trouves les informations dans un fichier JSON. Lorsqu'on cherche un étudiant, ne donne que son nom et son adresse email pour le contacter."},
-        {"role": "system", "content": JSON.stringify(data.students.slice(0, 5))},
-        {"role": "user", "content": req.body.text},
-      ]
+      messages: messages,
     });
     console.log(response.data)
     res.send(response.data);
